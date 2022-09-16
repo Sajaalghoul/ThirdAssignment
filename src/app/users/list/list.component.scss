@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.move{
+    border-radius: 5px;
+    margin:5px;
+    background-color: lavenderblush;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    border:0;
+    cursor:pointer; 
+    &:hover{
+        &:hover{
+            transform: scale(1.2);
+           
+        }
+       
+    }
+}
+.add{
+    font-family: cursive;
+    background-color: lavenderblush;
+    padding:0.2rem 0.2rem;
+    text-align: left;
+    color:black;
+    cursor: pointer;
+
+}
+
+.container{
+
+    margin: 20px;
+    font-family: cursive;
+    height:70vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color:black;
+
+
+}
+
+table{
+    border-collapse: collapse;
+    box-shadow:0 5px 10px gray;
+    background-color: white;
+    text-align: left;
+
+    
+
+}
+thead{
+  box-shadow:0 5px 10px gray;
+
+}
+th{
+    padding:1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+td{
+    padding: 1rem 2rem;
+}
+
+.action{
+    border-radius: 5px;
+    background-color: lavenderblush;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    border:0;
+    cursor:pointer; 
+    &:hover{
+        transform: scale(1.2);
+       
+    }
+}
+
+
+
+tr:nth-child(even){
+    background-color:lavenderblush;
+}
+li{
+        
+    margin: 20px;
+    font-size: 20px;
+    padding:10px;
+    display: inline;
+    cursor: pointer;
+    font-family: cursive;
+    
+}

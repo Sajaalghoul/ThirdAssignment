@@ -1,0 +1,19 @@
+
+
+<form [formGroup]="AddFormGroup" id="addForm">
+    <label >Id:</label>
+    <input  type="text"  id="Id" name="Id" formControlName="Id">
+    <div formGroupName="Name">
+        <label for="Firstname">firstname:</label>
+        <input type="text" id="Firstname" name="firstname" formControlName="firstname">
+        <label for="Lastname">lastname:</label>
+        <input type="text"  id="Lastname" name="lastname" formControlName="lastname">
+    </div>
+    <label for="Email">email:</label>
+    <input type="text"  id="Email"  name="Email" formControlName="Email">
+    <label for="avatar">avatar:</label>
+    <input type="file"  id="avatar"  name="avatar" formControlName="avatar" >
+    <button id="addSubmit" (click)="onAdd()">Add</button>
+</form>
+  
+

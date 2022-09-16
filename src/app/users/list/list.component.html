@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <img  *ngIf="isLoading" src="/assets/spinner.gif">
+    </div>
+<div class="container">
+    <table *ngIf="!isLoading && users?.length>0"  width="100%" border="1"> 
+        <thead>
+            <tr>
+                <th><input type="checkbox" (click)="toggelCheckAll($event)"> SELECT ALL ITEMS<br><br><button class="action"(click)="ActionOnSelectedItems()">Delete selcted items</button></th>
+                <th>Image</th> 
+                <th>id</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let user of users;let i=index">
+            <th><input type="checkbox" (click)="toggelCheckBox($event,i)" [checked]="CheckedItems[i]"> Select Item </th>
+            <td><img src="{{user.avatar}}" width="50"></td>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td><button class="action" [routerLink]="['/users/edit', user.id]" routerLinkActive="active">Edit</button> <br><button [routerLink]="['/users/details', user.id]" routerLinkActive="active" class="action">Details</button><br> <button (click)="delete(i)" routerLinkActive="active" class="action">Delete</button></td>
+        </tbody>
+    </table>
+    <div *ngIf="!isLoading && users?.length>0" >
+        <button class="move" [class.disabled]="page===1" [disabled]="page===1" (click)="goToPreviousPage()"><<</button>
+        <button class="move" [disabled]="page=== (pg)" [class.disabled]="page=== (pg)"  *ngFor="let pg of totalpagesAr; let i=index" (click)="goToPage(pg)" >{{pg}}</button>
+        <button class="move" [class.disabled]="page=== totalpages"  [disabled]="page=== totalpages" (click)="goToNextPage()">>></button>
+    </div>
+    </div>
+</div>
